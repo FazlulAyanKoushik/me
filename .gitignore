@@ -1,0 +1,12 @@
+### Basic template
+# Apples Build
+*.build
+*.apples
+
+# Initialized files
+*.exe
+*.ini
+*.basic
+.idea
+/idea
+
