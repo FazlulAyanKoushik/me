@@ -1,474 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Fazlul Ayan Koushik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Portfolio of Fazlul Ayan Koushik - Software Engineer" />
+    <meta name="author" content="Fazlul Ayan Koushik" />
+    <title>Fazlul Ayan Koushik | Software Engineer</title>
     <link rel="icon" type="image/x-icon" href="assets/img/portfolio_icon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#bd5d38",
+              slate: {
+                850: "#141c2f",
+                900: "#0f172a",
+                950: "#020617",
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          }
+        }
+      }
+    </script>
+    
+    <!-- Icons & Fonts -->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" />
   </head>
 
-  <body id="page-top">
-    <!-- Navigation-->
-    <nav
-      class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top"
-      id="sideNav"
-    >
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Fazlul Ayan Koushik</span>
-        <span class="d-none d-lg-block"
-          ><img
-            class="img-fluid img-profile rounded-circle mx-auto mb-2"
-            src="assets/img/ayan.jpg"
-            alt="..."
-        /></span>
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarResponsive"
-        aria-controls="navbarResponsive"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience"
-              >Experience</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education"
-              >Education</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#project-galleries">Project Galleries</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#interests"
-              >Interests</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
+  <body class="bg-slate-900 text-slate-400 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
+    
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-8 md:px-16 lg:px-24 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/30">
+      <nav class="max-w-6xl mx-auto flex justify-between items-center">
+        <a href="#page-top" class="text-2xl font-black text-white tracking-tighter hover:text-indigo-400 transition-colors">
+          FAK<span class="text-indigo-500">.</span>
+        </a>
+        
+        <!-- Desktop Nav -->
+        <ul class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider">
+          <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="#experience" class="hover:text-white transition-colors">Experience</a></li>
+          <li><a href="#education" class="hover:text-white transition-colors">Education</a></li>
+          <li><a href="#skills" class="hover:text-white transition-colors">Skills</a></li>
+          <li><a href="#projects" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#awards" class="hover:text-white transition-colors">Awards</a></li>
+        </ul>
+
+        <!-- Mobile Toggler -->
+        <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </nav>
+      
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-950 md:hidden border-b border-slate-800 shadow-2xl z-50">
+        <ul class="flex flex-col py-10 px-6 space-y-6 text-center text-sm font-bold uppercase tracking-widest text-slate-300">
+          <li><a href="#about" class="block py-2 hover:text-white transition-colors">About</a></li>
+          <li><a href="#experience" class="block py-2 hover:text-white transition-colors">Experience</a></li>
+          <li><a href="#education" class="block py-2 hover:text-white transition-colors">Education</a></li>
+          <li><a href="#skills" class="block py-2 hover:text-white transition-colors">Skills</a></li>
+          <li><a href="#projects" class="block py-2 hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#awards" class="block py-2 hover:text-white transition-colors">Awards</a></li>
         </ul>
       </div>
-    </nav>
-    <!-- Page Content-->
-    <div class="container-fluid p-0">
-      <!-- About-->
-      <section class="resume-section" id="about">
-        <div class="resume-section-content">
-          <h1 class="mb-0">
-            Fazlul
-            <span class="text-primary">Ayan</span>
-            Koushik
-          </h1>
-          <div class="subheading mb-5">
-            West Agargaon · Dhaka-1207 · Bangladesh ·
-            <a href="kf.ayan17@gmail.com">kf.ayan17@gmail.com</a>
+    </header>
+
+    <main id="page-top" class="pt-32 md:pt-40">
+      
+      <!-- Hero Section (About) -->
+      <section id="about" class="min-h-screen flex items-center justify-center py-20 px-8 md:px-16 lg:px-24">
+        <div class="max-w-6xl w-full mx-auto flex flex-col items-center md:items-start text-center md:text-left space-y-8 animate-on-scroll">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-500 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <img class="relative h-32 w-32 md:h-48 md:w-48 rounded-full border-4 border-slate-900 object-cover" src="assets/img/ayan.jpg" alt="Ayan" />
           </div>
-          <p class="lead mb-5">
-            Hi there, I'm a Software Engineer specializing in building
-            high-performance applications with well-organized architecture. My
-            passion lies in crafting scalable and efficient solutions that meet
-            the unique needs of users and businesses alike. I thrive on solving
-            complex problems and continuously strive to improve my skills and
-            stay updated with the latest industry trends.
+          
+          <div class="space-y-4">
+            <h1 class="text-4xl md:text-7xl">
+              Fazlul <span class="gradient-text">Ayan</span> Koushik
+            </h1>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-lg font-medium text-slate-300">
+               <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-500"></i> Dhaka, Bangladesh</span>
+               <span class="flex items-center gap-2"><i class="fas fa-envelope text-indigo-500"></i> <a href="mailto:kf.ayan17@gmail.com" class="hover:text-white transition-colors underline decoration-indigo-500/50">kf.ayan17@gmail.com</a></span>
+            </div>
+          </div>
+
+          <p class="text-lg md:text-xl leading-relaxed text-slate-400 max-w-2xl">
+            Software Engineer specializing in building <span class="text-white font-medium">high-performance applications</span> with well-organized architecture. I thrive on solving complex problems and continuously strive to improve my skills and stay updated with the latest industry trends.
           </p>
-          <div class="social-icons">
-            <a
-              class="social-icon"
-              href="https://www.linkedin.com/in/fazlul-ayan-me/" target="_blank"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a class="social-icon" href="https://github.com/FazlulAyanKoushik" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-            <a
-              class="social-icon"
-              href="https://eager-bandicoot-3d3.notion.site/CodeNest-4c100f7146fb48d483856d0fbe4f556c" target="_blank"
-              ><i class="fa-solid fa-blog"></i
-            ></a>
-            <a
-              class="social-icon"
-              href="https://www.facebook.com/koushik.ayan.7" target="_blank"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
+
+          <div class="flex gap-6 text-2xl">
+            <a href="https://www.linkedin.com/in/fazlul-ayan-me/" target="_blank" class="hover:text-indigo-400 transition-all hover:scale-110"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/FazlulAyanKoushik" target="_blank" class="hover:text-indigo-400 transition-all hover:scale-110"><i class="fab fa-github"></i></a>
+            <a href="https://eager-bandicoot-3d3.notion.site/CodeNest-4c100f7146fb48d483856d0fbe4f556c" target="_blank" class="hover:text-indigo-400 transition-all hover:scale-110"><i class="fa-solid fa-blog"></i></a>
+            <a href="https://www.facebook.com/koushik.ayan.7" target="_blank" class="hover:text-indigo-400 transition-all hover:scale-110"><i class="fab fa-facebook"></i></a>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
-      <!-- Experience-->
-      <section class="resume-section" id="experience">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Experience</h2>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Software Engineer</h3>
-              <div class="subheading mb-3">JB Connect Ltd</div>
-              <ul>
-                <li>
-                  Collaborating on the development of robust software solutions to meet business requirements.
-                </li>
-                <li>
-                  Spearheading new initiatives to improve system performance and scalability.
-                </li>
-                <li>
-                  Writing clean, maintainable, and efficient code while adhering to best practices.
-                </li>
-                <li>
-                  Leading code reviews and providing mentorship to junior developers.
-                </li>
-              </ul>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">October 2024 - Present</span>
-            </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Backend Engineer</h3>
-              <div class="subheading mb-3">Fiverr</div>
-              <ul>
-                <li>
-                  Maintained and optimized applications to enhance performance
-                  and user experience.
-                </li>
-                <li>
-                  Engaged in all project phases, from design to development and
-                  testing.
-                </li>
-                <li>
-                  Implemented new features, optimizing code for superior
-                  efficiency and scalability.
-                </li>
-                <li>
-                  Mentor junior, fostering a collaborative and innovative design
-                  culture.
-                </li>
-              </ul>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">February 2024 - Septembar 2024</span>
-            </div>
+
+      <!-- Experience -->
+      <section id="experience" class="py-32 px-8 md:px-16 lg:px-24 bg-slate-850/30">
+        <div class="max-w-6xl mx-auto space-y-16">
+          <div class="text-center md:text-left space-y-4 animate-on-scroll">
+            <h2 class="text-3xl md:text-5xl">Professional <span class="text-indigo-500">Experience</span></h2>
+            <div class="h-1 w-20 bg-indigo-500 mx-auto md:mx-0"></div>
           </div>
 
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Junior Backend Engineer</h3>
-              <div class="subheading mb-3">HealthOS Ltd.</div>
-              <ul>
-                <li>Developed efficient back-end solutions using Python.</li>
-                <li>
-                  Optimized database performance in PostgreSQL, significantly
-                  reducing query response times.
-                </li>
-                <li>
-                  Enforced Git best practices, including branching strategies
-                  and code reviews, enhancing collaboration and code quality.
-                </li>
-                <li>
-                  Mentored and collaborated with interns, providing guidance and
-                  support on various projects.
-                </li>
-              </ul>
+          <div class="grid gap-12">
+            <!-- JB Connect -->
+            <div class="glass p-8 rounded-3xl relative overflow-hidden group animate-on-scroll">
+                <div class="absolute top-0 right-0 p-8 opacity-5 text-6xl group-hover:text-indigo-500 group-hover:opacity-10 transition-all duration-500">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <h3 class="text-2xl text-white mb-1">Software Engineer</h3>
+                        <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm">JB Connect Ltd</p>
+                    </div>
+                    <span class="px-4 py-2 bg-indigo-500/10 text-indigo-400 rounded-full text-sm font-bold border border-indigo-500/20">Oct 2024 - Present</span>
+                </div>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Collaborating on the development of robust software solutions to meet business requirements.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Spearheading new initiatives to improve system performance and scalability.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Writing clean, maintainable, and efficient code while adhering to best practices.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Leading code reviews and providing mentorship to junior developers.</li>
+                </ul>
             </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">August 2022 - January 2024</span>
+
+            <!-- Fiverr -->
+            <div class="glass p-8 rounded-3xl relative overflow-hidden group animate-on-scroll">
+                <div class="absolute top-0 right-0 p-8 opacity-5 text-6xl group-hover:text-indigo-500 group-hover:opacity-10 transition-all duration-500">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <h3 class="text-2xl text-white mb-1">Backend Engineer</h3>
+                        <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm">Fiverr (Freelance)</p>
+                    </div>
+                    <span class="px-4 py-2 bg-indigo-500/10 text-indigo-400 rounded-full text-sm font-bold border border-indigo-500/20">Feb 2024 - Sep 2024</span>
+                </div>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Maintained and optimized applications to enhance performance and user experience.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Engaged in all project phases, from design to development and testing.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Implemented new features, optimizing code for superior efficiency and scalability.</li>
+                </ul>
             </div>
-          </div>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Junior Software Engineer</h3>
-              <div class="subheading mb-3">Softlab IT.</div>
-              <ul>
-                <li>
-                  Integrated new technologies and tools to streamline
-                  development processes.
-                </li>
-                <li>
-                  Developed software solutions to address client-specific
-                  challenges.
-                </li>
-                <li>
-                  Refined existing code to fix bugs and enhance functionality.
-                </li>
-              </ul>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">October 2021 - July 2022</span>
+
+            <!-- HealthOS -->
+            <div class="glass p-8 rounded-3xl relative overflow-hidden group animate-on-scroll">
+                <div class="absolute top-0 right-0 p-8 opacity-5 text-6xl group-hover:text-indigo-500 group-hover:opacity-10 transition-all duration-500">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+                    <div>
+                        <h3 class="text-2xl text-white mb-1">Junior Backend Engineer</h3>
+                        <p class="text-indigo-400 font-semibold tracking-wide uppercase text-sm">HealthOS Ltd.</p>
+                    </div>
+                    <span class="px-4 py-2 bg-indigo-500/10 text-indigo-400 rounded-full text-sm font-bold border border-indigo-500/20">Aug 2022 - Jan 2024</span>
+                </div>
+                <ul class="space-y-3 text-slate-400">
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Developed efficient back-end solutions using Python and PostgreSQL.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Optimized database performance, significantly reducing query response times.</li>
+                    <li class="flex gap-3"><i class="fas fa-check-circle text-indigo-500 mt-1"></i> Enforced Git best practices, including branching strategies and code reviews.</li>
+                </ul>
             </div>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
-      <!-- Education-->
-      <section class="resume-section" id="education">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Education</h2>
-          <div
-            class="d-flex flex-column flex-md-row justify-content-between mb-5"
-          >
-            <div class="flex-grow-1">
-              <h3 class="mb-0">Daffodil International University</h3>
-              <div class="subheading mb-3">Bachelor of Science</div>
-              <div>Computer Science and Engineering</div>
-            </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">January 2016 - January 2020</span>
-            </div>
+
+      <!-- Education -->
+      <section id="education" class="py-32 px-8 md:px-16 lg:px-24">
+        <div class="max-w-6xl mx-auto space-y-16">
+          <div class="text-center md:text-left space-y-4 animate-on-scroll">
+            <h2 class="text-3xl md:text-5xl">Academic <span class="text-indigo-500">Background</span></h2>
+            <div class="h-1 w-20 bg-indigo-500 mx-auto md:mx-0"></div>
           </div>
-          <div class="d-flex flex-column flex-md-row justify-content-between">
-            <div class="flex-grow-1">
-              <h3 class="mb-0">BCIC Collage</h3>
-              <div class="subheading mb-3">Science</div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass p-8 rounded-3xl border-l-4 border-indigo-500 animate-on-scroll">
+              <span class="text-indigo-500 font-bold mb-2 block">2016 - 2020</span>
+              <h3 class="text-xl text-white mb-2">Daffodil International University</h3>
+              <p class="text-slate-300 font-medium">B.Sc. in Computer Science and Engineering</p>
             </div>
-            <div class="flex-shrink-0">
-              <span class="text-primary">May 2013 - June 2015</span>
+            <div class="glass p-8 rounded-3xl border-l-4 border-cyan-500 animate-on-scroll">
+              <span class="text-cyan-500 font-bold mb-2 block">2013 - 2015</span>
+              <h3 class="text-xl text-white mb-2">BCIC College</h3>
+              <p class="text-slate-300 font-medium">Higher Secondary School Certificate (Science)</p>
             </div>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
-      <!-- Skills-->
-      <section class="resume-section" id="skills">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Skills</h2>
 
-          <!-- Programming Languages Section -->
-          <div class="subheading mb-3">Programming Languages</div>
-          <div class="skills-card-container">
-            <div class="skill-card">Python</div>
-            <div class="skill-card">JavaScript</div>
-            <div class="skill-card">TypeScript</div>
+      <!-- Skills -->
+      <section id="skills" class="py-32 px-8 md:px-16 lg:px-24 bg-slate-850/30">
+        <div class="max-w-6xl mx-auto space-y-16">
+          <div class="text-center md:text-left space-y-4 animate-on-scroll">
+            <h2 class="text-3xl md:text-5xl uppercase tracking-tight font-black">Technical <span class="text-indigo-500 font-black">Expertise</span></h2>
+            <div class="h-1 w-20 bg-indigo-500 mx-auto md:mx-0"></div>
           </div>
 
-          <!-- Frameworks and Technologies Section -->
-          <div class="subheading mb-3">Frameworks and Technologies</div>
-          <div class="skills-card-container">
-            <div class="skill-card">Django</div>
-            <div class="skill-card">DRF</div>
-            <div class="skill-card">Node.js</div>
-            <div class="skill-card">Angular</div>
-            <div class="skill-card">Linux</div>
-            <div class="skill-card">Celery</div>
-            <div class="skill-card">Selenium</div>
-            <div class="skill-card">Elasticsearch</div>
-            <div class="skill-card">Swagger</div>
-            <div class="skill-card">TDD</div>
-            <div class="skill-card">Docker</div>
-            <div class="skill-card">PostgreSQL</div>
-            <div class="skill-card">MongoDB</div>
-            <div class="skill-card">SQLite</div>
-            <div class="skill-card">Pandas</div>
-            <div class="skill-card">NumPy</div>
-            <div class="skill-card">GitHub</div>
-            <div class="skill-card">WebSocket</div>
-            <div class="skill-card">AWS</div>
-            <div class="skill-card">OpenAI</div>
-          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Programming Languages -->
+            <div class="glass p-8 rounded-3xl border-t-4 border-indigo-500 transition-all duration-300 hover:bg-slate-800/80 group animate-on-scroll">
+                <div class="text-indigo-500 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-6">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">PYTHON</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">JAVASCRIPT</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">TYPESCRIPT</span>
+                </div>
+            </div>
 
-          <!-- Developer Tools Section -->
-          <div class="subheading mb-3">Developer Tools</div>
-          <div class="skills-card-container">
-            <div class="skill-card">PyCharm</div>
-            <div class="skill-card">VS Code</div>
-            <div class="skill-card">WebStorm</div>
-            <div class="skill-card">Postman</div>
+            <!-- Backend & Web Technologies -->
+            <div class="glass p-8 rounded-3xl border-t-4 border-blue-500 transition-all duration-300 hover:bg-slate-800/80 group animate-on-scroll">
+                <div class="text-blue-500 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-6">Backend & Web</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">DJANGO</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">DRF</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">FASTAPI</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">FLASK</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">NODE.JS</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">ANGULAR</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">WEBSOCKET</span>
+                </div>
+            </div>
+
+            <!-- AI & Machine Learning -->
+            <div class="glass p-8 rounded-3xl border-t-4 border-purple-500 transition-all duration-300 hover:bg-slate-800/80 group animate-on-scroll">
+                <div class="text-purple-500 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-6">AI & Systems</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">OPENAI</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">LANGCHAIN</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">AGNO</span>
+                </div>
+            </div>
+
+            <!-- Data & Infrastructure -->
+            <div class="glass p-8 rounded-3xl border-t-4 border-cyan-500 transition-all duration-300 hover:bg-slate-800/80 group animate-on-scroll">
+                <div class="text-cyan-500 text-3xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="text-xl text-white font-bold mb-6">Data & DevOps</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">POSTGRESQL</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">MONGODB</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">DOCKER</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">AWS</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">LINUX</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">ELASTICSEARCH</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">CELERY</span>
+                    <span class="px-3 py-1.5 bg-slate-900/80 text-xs font-bold text-slate-300 rounded-lg border border-slate-700">SELENIUM</span>
+                </div>
+            </div>
           </div>
         </div>
       </section>
-      <hr class="m-0" />
-      <!-- Projects-->
-      <section class="resume-section" id="project-galleries">
-  <div class="resume-section-content">
-    <h2 class="mb-5">Project Galleries</h2>
-    <div class="project-grid">
-      <!-- Project 1 -->
-      <div class="project-item">
-        <iframe src="https://ecom.healthosbd.com/" frameborder="0" loading="lazy"></iframe>
-        <p class="project-name">
-          <a href="https://ecom.healthosbd.com/" target="_blank">HealthOS</a>
-        </p>
-      </div>
-      <!-- Project 2 -->
-      <div class="project-item">
-        <iframe src="https://www.esquireelectronicsltd.com/" frameborder="0" loading="lazy"></iframe>
-        <p class="project-name">
-          <a href="https://www.esquireelectronicsltd.com/" target="_blank">Esquire Electronics</a>
-        </p>
-      </div>
-      <!-- Project 3 -->
-      <div class="project-item">
-        <iframe src="https://www.supplers.com/" frameborder="0" loading="lazy"></iframe>
-        <p class="project-name">
-          <a href="https://www.supplers.com/" target="_blank">Supplers</a>
-        </p>
-      </div>
-      <!-- Project 4 -->
-      <div class="project-item">
-        <iframe src="https://mirpur-pharma.pharmik.co/" frameborder="0" loading="lazy"></iframe>
-        <p class="project-name">
-          <a href="https://mirpur-pharma.pharmik.co/" target="_blank">Pharmik</a>
-        </p>
-      </div>
-      <!-- Project 5 -->
-      <div class="project-item">
-        <iframe src="https://mkshippinglines.com/" frameborder="0" loading="lazy"></iframe>
-        <p class="project-name">
-          <a href="https://mkshippinglines.com/" target="_blank">MK Shipping</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
-      <hr class="m-0" />
-      <!-- Interests-->
-      <section class="resume-section" id="interests">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Interests</h2>
-          <p>
-            Apart from being a software engineer, I have a passion for singing. I
-            can sing well, and this has given me the confidence to speak and
-            perform in front of thousands of people, strengthening my public
-            speaking and presentation skills.
-          </p>
-          <p>
-            I also love playing cricket, which has helped me develop essential
-            team-playing and leadership abilities. The strategies and
-            collaboration involved in the game have significantly contributed to
-            my problem-solving skills in both life and work.
-          </p>
-          <p class="mb-0">
-            When indoors, I enjoy staying up-to-date with the latest
-            technological advancements, and
-            exploring new ways to apply innovative tools in my projects.
-          </p>
+      <!-- Projects -->
+      <section id="projects" class="py-32 px-8 md:px-16 lg:px-24">
+        <div class="max-w-6xl mx-auto space-y-16">
+          <div class="text-center space-y-4 animate-on-scroll">
+            <h2 class="text-3xl md:text-5xl">Featured <span class="text-indigo-500">Projects</span></h2>
+            <p class="text-slate-400">A collection of systems and applications I've contributed to.</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="glass flex flex-col rounded-3xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 animate-on-scroll">
+              <div class="aspect-video bg-slate-800 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                <!-- Since we are removing iframes, we use a placeholder or stylized icon if images aren't available -->
+                <div class="flex items-center justify-center h-full text-indigo-500/20 text-8xl group-hover:scale-110 transition-transform duration-500">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                <!-- Real links still available -->
+                <div class="absolute bottom-4 left-6">
+                    <h3 class="text-xl">HealthOS</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <p class="text-sm text-slate-400 mb-4 line-clamp-3">Full-cycle e-commerce platform for healthcare products, optimized for performance and scalability.</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Django · Angular · PostgreSQL</span>
+                  <a href="https://ecom.healthosbd.com/" target="_blank" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-white hover:bg-indigo-500 transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="glass flex flex-col rounded-3xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 animate-on-scroll">
+              <div class="aspect-video bg-slate-800 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                <div class="flex items-center justify-center h-full text-indigo-500/20 text-8xl group-hover:scale-110 transition-transform duration-500">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div class="absolute bottom-4 left-6">
+                    <h3 class="text-xl">Esquire Electronics</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <p class="text-sm text-slate-400 mb-4 line-clamp-3">Enterprise-level e-commerce application for premium electronics retail in Bangladesh.</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Node.js · Angular · MongoDB</span>
+                  <a href="https://www.esquireelectronicsltd.com/" target="_blank" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-white hover:bg-indigo-500 transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="glass flex flex-col rounded-3xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 animate-on-scroll">
+              <div class="aspect-video bg-slate-800 relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
+                <div class="flex items-center justify-center h-full text-indigo-500/20 text-8xl group-hover:scale-110 transition-transform duration-500">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="absolute bottom-4 left-6">
+                    <h3 class="text-xl">Supplers</h3>
+                </div>
+              </div>
+              <div class="p-6 flex-grow flex flex-col justify-between">
+                <p class="text-sm text-slate-400 mb-4 line-clamp-3">B2B supply chain management system streamlining operations for suppliers and wholesalers.</p>
+                <div class="flex justify-between items-center">
+                  <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Django · React · PostgreSQL</span>
+                  <a href="https://www.supplers.com/" target="_blank" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-white hover:bg-indigo-500 transition-colors"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- More projects can be added here -->
+          </div>
         </div>
       </section>
-      <hr class="m-0" />
-      <!-- Awards-->
-      <section class="resume-section" id="awards">
-        <div class="resume-section-content">
-          <h2 class="mb-5">Awards & Certifications</h2>
-          <ul class="fa-ul mb-0">
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Employee of the Month - HealthOS - March 2023
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              1
-              <sup>st</sup>
-              Place - BCIC Collage - Singing Competition 2014
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Man of the match - Collage Cricket Tournament 2014
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              2
-              <sup>st</sup>
-              Place - A.M High School - Singing Competition 2012
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              Man of the match - Hatiya Cricket Tournament 2012
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              2
-              <sup>nd</sup>
-              Place - A.M High School - Singing Competition 2011
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              1
-              <sup>st</sup>
-              Place - A.M High School - Singing Competition 2009
-            </li>
-            <li>
-              <span class="fa-li"
-                ><i class="fas fa-trophy text-warning"></i
-              ></span>
-              3
-              <sup>rd</sup>
-              Place - A.M High School - Singing Competition 2008
-            </li>
-          </ul>
+
+      <!-- Awards -->
+      <section id="awards" class="py-24 px-8 md:px-16 lg:px-24 bg-indigo-600/5">
+        <div class="max-w-6xl mx-auto space-y-16 text-center">
+            <div class="space-y-4 animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl text-white">Awards & <span class="text-indigo-500">Achievements</span></h2>
+                <div class="h-1 w-20 bg-indigo-500 mx-auto"></div>
+            </div>
+
+            <div class="grid gap-6 text-left animate-on-scroll">
+                <div class="flex gap-6 items-start p-6 glass rounded-2xl hover:bg-slate-800/80 transition-all">
+                    <div class="text-amber-400 text-2xl mt-1"><i class="fas fa-crown"></i></div>
+                    <div>
+                        <h4 class="text-lg text-white font-bold">Employee of the Month</h4>
+                        <p class="text-slate-400">HealthOS - March 2023</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start p-6 glass rounded-2xl hover:bg-slate-800/80 transition-all">
+                    <div class="text-amber-400 text-2xl mt-1"><i class="fas fa-trophy"></i></div>
+                    <div>
+                        <h4 class="text-lg text-white font-bold">1st Place - Singing Competition</h4>
+                        <p class="text-slate-400">BCIC College - 2014</p>
+                    </div>
+                </div>
+                <div class="flex gap-6 items-start p-6 glass rounded-2xl hover:bg-slate-800/80 transition-all">
+                    <div class="text-amber-400 text-2xl mt-1"><i class="fas fa-medal"></i></div>
+                    <div>
+                        <h4 class="text-lg text-white font-bold">Man of the Match</h4>
+                        <p class="text-slate-400">College Cricket Tournament - 2014</p>
+                    </div>
+                </div>
+            </div>
         </div>
       </section>
-    </div>
-    <footer>
-      <div style="background-color: #1a1e21; color: white; margin-bottom: -20px;
-      text-align: center; padding-top: 50px; padding-bottom: 10px">
-        <h5 style="color: white; padding-bottom: 10px">Mail to: <a href="mailto:kf.ayan17@gmail.com" style="color: #bd5d38">kf.ayan17@gmail.com</a></h5>
-        <p style="margin-top: 20px; font-size: 14px;">
-      © 2024 Fazlul Ayan Koushik. All rights reserved.
-    </p>
-      </div>
+
+    </main>
+
+    <footer class="py-12 border-t border-slate-800 mt-24">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col items-center space-y-8">
+            <div class="flex gap-8 text-xl text-slate-500">
+                <a href="https://github.com/FazlulAyanKoushik" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/fazlul-ayan-me/" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:kf.ayan17@gmail.com" class="hover:text-white transition-colors"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 Fazlul Ayan Koushik. All rights reserved.</p>
+        </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+
+    <!-- Scripts -->
     <script src="js/scripts.js"></script>
   </body>
 </html>
