@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fazlulayankoushik.github.io/me/sitemap.xml
