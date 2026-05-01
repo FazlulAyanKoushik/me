@@ -30,12 +30,32 @@ body {
 
 /* Glassmorphism Classes */
 .glass {
-    @apply bg-slate-800/50 backdrop-blur-md border border-slate-700/50;
+    @apply bg-slate-900/40 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
 }
 
 .glass-hover {
-    @apply hover:bg-slate-700/50 transition-all duration-300;
+    @apply hover:bg-slate-800/60 transition-all duration-500 hover:border-indigo-500/50 hover:shadow-indigo-500/10;
 }
+
+/* Futuristic Effects */
+.neon-border {
+    position: relative;
+}
+.neon-border::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(45deg, transparent, #8b5cf6, transparent);
+    z-index: -1;
+    border-radius: inherit;
+    animation: border-flow 3s linear infinite;
+}
+
+@keyframes border-flow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
 
 /* Typography Improvements */
 h1, h2, h3, h4 {

@@ -60,25 +60,27 @@
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#bd5d38",
-              slate: {
-                850: "#141c2f",
-                900: "#0f172a",
-                950: "#020617",
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
+      <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: "#bd5d38",
+                accent: "#8b5cf6",
+                cyber: "#0ea5e9",
+                slate: {
+                  850: "#0f172a",
+                  900: "#020617",
+                  950: "#020617",
+                }
+              },
+              fontFamily: {
+                sans: ['Inter', 'sans-serif'],
+              },
+            }
           }
         }
-      }
-    </script>
+      </script>
     
     <!-- Icons & Fonts -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -86,9 +88,12 @@
     <link href="css/styles.css" rel="stylesheet" />
   </head>
 
-  <body class="bg-slate-900 text-slate-400 font-sans selection:bg-indigo-500/30 selection:text-indigo-200">
-    
-    <!-- Navigation -->
+    <body class="bg-slate-900 text-slate-400 font-sans selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden">
+      
+      <!-- Futuristic Background Canvas -->
+      <canvas id="bg-canvas" class="fixed top-0 left-0 w-full h-full -z-10 opacity-40 pointer-events-none"></canvas>
+      
+      <!-- Navigation -->
     <header class="fixed top-0 w-full z-50 transition-all duration-300 py-4 px-8 md:px-16 lg:px-24 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/30">
       <nav class="max-w-6xl mx-auto flex justify-between items-center">
         <a href="#page-top" class="text-2xl font-black text-white tracking-tighter hover:text-indigo-400 transition-colors">
@@ -136,7 +141,7 @@
           
           <div class="space-y-4">
             <h1 class="text-4xl md:text-7xl">
-              Fazlul <span class="gradient-text">Ayan</span> Koushik
+              Fazlul <span id="typing-text" class="gradient-text border-b-4 border-indigo-500">Ayan</span> Koushik
             </h1>
             <div class="flex flex-wrap justify-center md:justify-start gap-4 text-lg font-medium text-slate-300">
                <span class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-500"></i> Dhaka, Bangladesh</span>
