@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             init() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 1.5;
+                this.vx = (Math.random() - 0.5) * 0.8;
+                this.vy = (Math.random() - 0.5) * 0.8;
+                this.radius = Math.random() * 2 + 1;
             }
             update() {
                 this.x += this.vx;
@@ -33,15 +33,36 @@ document.addEventListener('DOMContentLoaded', () => {
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(139, 92, 246, 0.5)';
+                ctx.fillStyle = 'rgba(139, 92, 246, 0.7)';
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = 'rgba(139, 92, 246, 0.8)';
                 ctx.fill();
+                ctx.shadowBlur = 0;
             }
         }
 
-        for (let i = 0; i < 100; i++) particles.push(new Particle());
+        for (let i = 0; i < 80; i++) particles.push(new Particle());
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw connections
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(139, 92, 246, ${1 - distance / 150})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
             particles.forEach(p => {
                 p.update();
                 p.draw();
